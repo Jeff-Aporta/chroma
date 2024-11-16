@@ -1,0 +1,168 @@
+.ResaltaProg {
+  &.light {
+    --bga: rgba(255, 255, 255, 0.5);
+    --bg: white;
+
+    &.nobg {
+      --bg: transparent !important;
+      --bga: transparent !important;
+    }
+
+    background-color: var(--bg);
+
+    color: black;
+
+    .com {
+      color: slategray;
+
+      &.line {
+        color: slategray;
+      }
+      &.block {
+        color: gray;
+      }
+    }
+
+    .regex {
+      color: crimson;
+      font-weight: bolder;
+    }
+
+    .str {
+      color: orange;
+      &.line {
+        font-weight: bolder;
+      }
+    }
+
+    .num {
+      font-weight: bolder;
+      color: orchid;
+    }
+
+    .atr {
+      &.called {
+        font-weight: bolder;
+        color: mediumturquoise;
+      }
+      &.snakeupper {
+        color: darkorange;
+      }
+    }
+
+    .kwd {
+      color: blue;
+      font-weight: bolder;
+      &.reserved {
+        &.type2 {
+          color: mediumblue;
+        }
+      }
+      &.value {
+        color: darkorchid;
+      }
+      &.control {
+        color: deeppink;
+      }
+      &.control2 {
+        color: mediumorchid;
+      }
+    }
+
+    .opr {
+      font-weight: bolder;
+      &.eq {
+        color: crimson;
+      }
+      &.arrow {
+        color: crimson;
+      }
+      &.sep {
+        color: darkred;
+      }
+      &.arit {
+        color: blueviolet;
+      }
+      &.inc {
+        color: green;
+      }
+      &.asgn {
+        color: red;
+      }
+      &.logic {
+        color: magenta;
+      }
+      &.comp {
+        color: orangered;
+      }
+      &.bit {
+        color: blueviolet;
+      }
+      &.logic {
+        color: orangered;
+      }
+      &.destruct {
+        color: orangered;
+      }
+    }
+
+    .agr {
+      font-weight: bolder;
+      &.par {
+        color: dodgerblue;
+      }
+      &.key,
+      &.keycmds,
+      &.keycmds2 {
+        color: darkred;
+      }
+      &.brk {
+        color: darkmagenta;
+      }
+    }
+
+    .call {
+      font-weight: bolder;
+      &.fn {
+        .case {
+          filter: hue-rotate(10deg);
+        }
+        .last {
+          color: orchid;
+          &.alone {
+            color: teal;
+          }
+        }
+      }
+      .case {
+        &.DOM {
+          color: steelblue;
+        }
+        &.called {
+          filter: brightness(1.5) hue-rotate(10deg);
+        }
+        &.upper {
+          color: royalblue;
+          &.snake {
+            color: chocolate;
+          }
+        }
+        &.lower {
+          color: darkcyan;
+          &.snake {
+            color: maroon;
+          }
+        }
+
+        &.camel {
+          &.primary {
+            color: olive;
+          }
+          &.secondary {
+            color: darkgoldenrod;
+          }
+        }
+      }
+    }
+  }
+}

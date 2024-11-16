@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Chroma JS</title>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:site_name" content="Chroma JS" />
+    <meta property="og:title" content="Chroma JS" />
+    <meta
+      property="og:description"
+      content="Colores que transforma el código en claridad."
+    />
+    <link
+      rel="icon"git remote add origin https://github.com/Jeff-Aporta/chroma.git
+      git branch -M main
+      git push -u origin main
+      type="image/png"
+      href="https://jeff-aporta.github.io/ascii-maploader/static/img/icon64x64.png"
+    />
+    <meta
+      property="og:image"
+      content="https://jeff-aporta.github.io/ascii-maploader/static/img/thumb.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="https://jeff-aporta.github.io/ascii-maploader/static/img/icon64x64.png"
+    />
+
+    <script src="static/js/index.all.min.js"></script>
+    <script>
+      asciiMap.CLI.designSysCliRender_DocuDesignPR();
+
+      if (window.location.href.includes("github")) {
+        asciiMap.writenodes("static/js/appdoc.client.merged.min.js");
+      } else {
+        asciiMap
+          .tree("static")
+          .subDir("jsx", (jsx) => {
+            jsx
+              .jsx("custom_components", "initApp")
+              .subDir("contents", (contents) => {
+                contents.jsx("cascade", "intro", "learn", "string");
+              });
+          })
+          .writehtml();
+      }
+    </script>
+  </head>
+  <body>
+    <script>
+      asciiMap.CLI.designSysCliRender_DocuDesign_body();
+    </script>
+  </body>
+</html>

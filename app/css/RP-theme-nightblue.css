@@ -1,0 +1,201 @@
+.ResaltaProg {
+  &.nightblue {
+    --hue-bg: 240;
+    --sat-bg: 50%;
+    --lum-bg: 10%;
+
+    &.nobg {
+      --bg: transparent !important;
+      --bga: transparent !important;
+    }
+
+    background-color: var(--bg);
+
+    color: white;
+
+    .blockcmd {
+      &.no-code {
+        color: steelblue;
+      }
+      &.prev {
+        .herramientas-prev {
+          .btns-prev {
+            .info-prev {
+              color: lightblue;
+              font-weight: bolder;
+              .more {
+                color: white;
+              }
+            }
+          }
+        }
+      }
+      &.note {
+        .body-note > .content-container > .content p {
+          color: steelblue;
+        }
+      }
+      &.title {
+        &:not(:is(.doc)) {
+          > .body-nocode {
+            color: steelblue;
+          }
+        }
+      }
+    }
+
+    .com {
+      color: gray;
+
+      &.line {
+        color: rgba(255, 255, 255, 0.3);
+      }
+      &.block {
+        color: rgba(180, 200, 255, 0.4);
+      }
+    }
+
+    .regex {
+      color: crimson;
+      font-weight: bolder;
+    }
+
+    .str {
+      &.line {
+        color: gold;
+      }
+      &.temp {
+        color: orange;
+      }
+    }
+
+    .num {
+      color: plum;
+    }
+
+    .atr {
+      &.called {
+        font-weight: bolder;
+        color: mediumturquoise;
+      }
+      &.snakeupper {
+        color: yellow;
+      }
+    }
+
+    .kwd {
+      color: deepskyblue;
+      font-weight: bolder;
+      &.reserved {
+        &.type2 {
+          color: dodgerblue;
+        }
+      }
+      &.value {
+        color: darkorchid;
+      }
+      &.control {
+        color: deeppink;
+      }
+      &.control2 {
+        color: mediumorchid;
+      }
+    }
+
+    .opr {
+      font-weight: bolder;
+      &.eq {
+        color: crimson;
+      }
+      &.arrow {
+        color: crimson;
+      }
+      &.sep {
+        color: lightskyblue;
+      }
+      &.arit {
+        color: mediumorchid;
+      }
+      &.inc {
+        color: lime;
+      }
+      &.asgn {
+        color: red;
+      }
+      &.logic {
+        color: magenta;
+      }
+      &.comp {
+        color: orangered;
+      }
+      &.bit {
+        color: blueviolet;
+      }
+      &.logic {
+        color: orangered;
+      }
+      &.destruct {
+        color: orangered;
+      }
+    }
+
+    .agr {
+      font-weight: bolder;
+      &.par {
+        color: dodgerblue;
+      }
+      &.key,
+      &.keycmds,
+      &.keycmds2 {
+        color: tomato;
+      }
+      &.brk {
+        color: magenta;
+      }
+    }
+
+    .call {
+      font-weight: bolder;
+      &.fn {
+        .case {
+          filter: hue-rotate(10deg);
+        }
+        .last {
+          color: orchid;
+          &.alone {
+            color: chartreuse;
+          }
+        }
+      }
+      .case {
+        &.DOM {
+          color: lightgreen;
+        }
+        &.called {
+          filter: brightness(1.5) hue-rotate(10deg);
+        }
+        &.upper {
+          color: cyan;
+          &.snake {
+            color: yellow;
+          }
+        }
+        &.lower {
+          color: mediumturquoise;
+          &.snake {
+            color: orange;
+          }
+        }
+
+        &.camel {
+          &.primary {
+            color: lime;
+          }
+          &.secondary {
+            color: mediumturquoise;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,128 @@
+.ResaltaProg {
+  .blockcmd.note {
+    position: relative;
+    display: table;
+    margin: 0;
+    padding: 0;
+
+    --index-hover: 0;
+
+    z-index: calc(1 + var(index-ballon-global) + var(--index-hover));
+
+    p {
+      margin: 0;
+      padding: 5px 0;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin-bottom: 10px;
+      &.compact{
+        margin-top: 10px;
+      }
+    }
+
+    .body-note {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      z-index: 2;
+
+      --border-right-op: 0.1;
+      --border-h-op: 0.1;
+
+      .code-container {
+        position: relative;
+        padding-left: 0;
+        padding-right: 20px;
+        padding-top: 15px;
+        padding-bottom: 20px;
+
+        border-right: 3px solid rgba(255, 255, 255, var(--border-right-op));
+        border-bottom: 1px solid rgba(0, 200, 255, var(--border-h-op));
+        border-top: 1px solid rgba(0, 200, 255, var(--border-h-op));
+        border-radius: 0 15px 15px 0;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        transition: all 0.3s;
+
+        z-index: 5;
+
+        .triangle {
+          position: absolute;
+          top: 50%;
+          left: 100%;
+          transform: translate(3px, -50%);
+          width: 0;
+          height: 0;
+          border-top: 10px solid transparent;
+          border-bottom: 10px solid transparent;
+          border-left: 10px solid rgba(255, 255, 255, var(--border-h-op));
+        }
+      }
+      > .content-container {
+        position: relative;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        border-radius: 15px;
+
+        transition: all 0.3s;
+        z-index: 0;
+        
+        > .content {
+          opacity: 0.4;
+          padding: 5px;
+          padding-left: 20px;
+          padding-right: 30px;
+          border-radius: 15px;
+          max-width: 35vw;
+          min-width: 300px;
+          white-space: normal;
+
+          transform: translateX(-10px);
+          transition: all 0.3s;
+
+          cursor: pointer;
+          
+          p {
+            font-size: 90%;
+            opacity: 0.6;
+          }
+        }
+      }
+
+      &:hover {
+        --border-right-op: 0.3;
+        --border-h-op: 0.5;
+        z-index: 5;
+        > .code-container {
+          backdrop-filter: brightness(1.2) hue-rotate(30deg);
+          z-index: 1;
+        }
+        > .content-container {
+          z-index: 0;
+
+          .content {
+            transform: translateX(5px);
+            background-color: rgba(255, 255, 255, 0.04);
+            opacity: 1;
+          }
+
+          p {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,109 @@
+.ResaltaProg {
+  .blockcmd.title {
+    position: relative;
+
+    > .content-code .code{
+      /* font-weight: normal; */
+    }
+
+    &.doc {
+      border-left: 3px solid rgba(255, 255, 255, 0.2);
+      padding-left: 15px;
+      display: table;
+
+      border-radius: 30px 0 0 30px;
+
+      > .body-nocode {
+        max-width: 500px;
+        font-size: 90%;
+        color: lightblue;
+        filter: saturate(0.7);
+        cursor: pointer;
+
+        background: linear-gradient(to top, #111, transparent);
+        border: 2px solid #333;
+        opacity: 0.7;
+        scale: 0.95;
+        transform-origin: 0 center;
+        padding: 10px;
+        padding-left: 15px;
+        border-radius: 30px 30px 30px 0;
+        margin-bottom: 15px;
+        margin-left: -5px;
+
+        &:hover {
+          filter: brightness(1);
+          opacity: 1;
+          scale: 1;
+          transform: translateX(7px);
+        }
+      }
+    }
+
+    &:not(:is(.doc)) {
+      background-color: var(--bg);
+
+      border: 1px solid rgba(255, 255, 255, 0.1);
+
+      > .content-code > .code{
+        background: var(--bg);
+        padding-left: 5px;
+        padding-top: 15px;
+      }
+
+      > .body-nocode {
+        display: block;
+        position: sticky;
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        border-top: none;
+        box-sizing: border-box;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: 15px 10px;
+        background: var(--bg2);
+        z-index: 10;
+
+        .content{
+          /* -webkit-mask-image: linear-gradient(black, rgba(0, 0, 0, 0.1)); */
+        }
+      }
+    }
+
+    > .body-nocode {
+      transition: all 0.3s;
+      white-space: normal;
+    }
+
+    &.doc {
+      > .body-nocode h2 {
+        font-size: 110%;
+      }
+    }
+
+    > .body-nocode {
+      width: 100%;
+    }
+    a {
+      color: plum;
+      text-decoration: none;
+      &:hover {
+        color: deeppink;
+      }
+    }
+    p {
+      margin: 0;
+      padding: 5px 0;
+      opacity: 0.8;
+    }
+    &:hover {
+      &:not(:is(.doc)) {
+        > .body-nocode {
+          .content{
+            /* -webkit-mask-image: none; */
+          }
+        }
+      }
+    }
+  }
+}

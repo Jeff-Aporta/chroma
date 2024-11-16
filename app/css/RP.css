@@ -1,0 +1,133 @@
+.ResaltaProg {
+  --hue-rotate: 0;
+  --bga: hsla(var(--hue-bg), var(--sat-bg), var(--lum-bg), 0.5);
+  --bg: hsl(var(--hue-bg), var(--sat-bg), var(--lum-bg));
+  --bg2: hsla(calc(var(--hue-bg) + 330), calc(var(--sat-bg) + 30%), var(--lum-bg), 0.8);
+
+  padding: 15px;
+
+  min-width: max-content;
+
+  position: relative;
+  z-index: 1;
+
+  &.nobg {
+    --bg: transparent !important;
+    --bga: transparent !important;
+  }
+
+  .huerotate-1,
+  .huerotate1,
+  .huerotate2,
+  .huerotate3,
+  .huerotate4,
+  .huerotate5,
+  .huerotate6,
+  .huerotate7,
+  .huerotate7-5,
+  .huerotate8,
+  .huerotate9,
+  .huerotate10,
+  .huerotate11 {
+    .container,
+    b,
+    a,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    span {
+      &:not(:is(.icon, .hidethumb, .ballon)) {
+        filter: hue-rotate(calc(30deg * var(--hue-rotate))) saturate(5);
+      }
+    }
+  }
+  .huerotate-1 {
+    --hue-rotate: -1;
+  }
+  .huerotate1 {
+    --hue-rotate: 1;
+  }
+  .huerotate2 {
+    --hue-rotate: 2;
+  }
+  .huerotate3 {
+    --hue-rotate: 3;
+  }
+  .huerotate4 {
+    --hue-rotate: 4;
+  }
+  .huerotate5 {
+    --hue-rotate: 5;
+  }
+  .huerotate6 {
+    --hue-rotate: 6;
+  }
+  .huerotate7 {
+    --hue-rotate: 7;
+  }
+  .huerotate7-5 {
+    --hue-rotate: 7.5;
+  }
+  .huerotate8 {
+    --hue-rotate: 8;
+  }
+  .huerotate9 {
+    --hue-rotate: 9;
+  }
+  .huerotate10 {
+    --hue-rotate: 10;
+  }
+  .huerotate11 {
+    --hue-rotate: 11;
+  }
+
+  b {
+    color: deeppink;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 0;
+    color: deepskyblue;
+  }
+
+  --index-ballon-global: 0;
+  --index-info: 0;
+
+  &:has(.info:hover) {
+    --index-info: -1;
+    .blockcmd:has(> .herramientas .info:hover) {
+      --index-info: 1;
+    }
+    .blockcmd:not(:has(.herramientas .info:hover)) {
+      &.note {
+        z-index: -1;
+      }
+    }
+  }
+
+  &:has(.ballon:hover) {
+    --index-ballon-global: -1;
+
+    .blockcmd:not(:has(.ballon:hover)) {
+      --index-header-check: -1;
+      z-index: 0;
+    }
+    .blockcmd:has(.ballon:hover) {
+      --index-ballon-global: 1;
+    }
+  }
+
+  .right {
+    text-align: right;
+  }
+  .white {
+    color: white;
+  }
+}
